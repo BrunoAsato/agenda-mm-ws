@@ -37,23 +37,23 @@ export const crud = {
 /** Define your collections here **/
 
 // The name of the collection and file
-export const itemCollection = 'items';
+export const contatoCollection = 'contatos';
 
 // Define the nedb instance
-collections[itemCollection] = new nedb({
-  filename: filename(itemCollection),
+collections[contatoCollection] = new nedb({
+  filename: filename(contatoCollection),
   autoload: true,
 })
 
 // Configure the collection
-collections[itemCollection]
+collections[contatoCollection]
   .ensureIndex({fieldName: 'name', unique: true}, (e) => e ? console.error(e) : null);
 
 // Export the API you like to use in your app
-export const items = {
-  find: () => crud.find(itemCollection),
-  findOne: (_id) => crud.findOne(itemCollection, _id),
-  create: (document) => crud.create(itemCollection, document),
-  update: (_id, document) => crud.update(itemCollection, _id, document),
-  delete: (_id) => crud.delete(itemCollection, _id),
+export const contatos = {
+  find: () => crud.find(contatoCollection),
+  findOne: (_id) => crud.findOne(contatoCollection, _id),
+  create: (document) => crud.create(contatoCollection, document),
+  update: (_id, document) => crud.update(contatoCollection, _id, document),
+  delete: (_id) => crud.delete(contatoCollection, _id),
 }
