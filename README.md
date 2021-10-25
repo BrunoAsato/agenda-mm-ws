@@ -1,63 +1,29 @@
-<h1 align="center"><strong>Boilerplate for a Minimal GraphQL Server w/ TypeScript</strong></h1>
+# :pencil: Sobre o projeto
 
-<br />
+Esse projeto tem por finalidade testar o conhecimento através do desenvolvimento de uma agenda de contatos.
 
-<div align="center"><img src="https://imgur.com/1MfnLVl.png" /></div>
+## Scripts disponíveis
 
-<div align="center"><strong>🚀 Bootstrap your GraphQL server within seconds</strong></div>
-<div align="center">Minimal starter kit for a flexible GraphQL server for TypeScript - based on best practices from the GraphQL community.</div>
+### `yarn [start|dev]`
 
-## Features
+Inicia o projeto em modo desenvolvimento com debug.
 
-- **Scalable GraphQL server:** The server uses [`graphql-yoga`](https://github.com/prisma/graphql-yoga) which is based on Apollo Server & Express
-- **Tooling**: Out-of-the-box support for [GraphQL Playground](https://github.com/prisma/graphql-playground) & [query performance tracing](https://github.com/apollographql/apollo-tracing)
-- **Simple Hello World example:** Where it either returns `Hello <name>!` or `Hello World!` if no name argument is provided.
-- **No configuration overhead**: Preconfigured [`graphql-config`](https://github.com/prisma/graphql-config) setup
+### `yarn server`
 
-Read more about the idea behind GraphQL boilerplates [here](https://blog.graph.cool/graphql-boilerplates-graphql-create-how-to-setup-a-graphql-project-6428be2f3a5).
-  
-## Requirements
+Inicia o projeto para produção, a partir do caminho 'src/server.js'
 
-You need to have the [GraphQL CLI](https://github.com/graphql-cli/graphql-cli) installed to bootstrap your GraphQL server using `graphql create`:
+# Sobre o Autor:
 
-```sh
-npm install -g graphql-cli
-```
+## Contact
 
-## Getting started
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://web.whatsapp.com/send?text=&phone=5542999341204)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:asatobruno@gmail.com)
+<br /><br />
 
-```sh
-# 1. Bootstrap GraphQL server in directory `my-app`, based on `typescript-basic` boilerplate
-graphql create my-app --boilerplate typescript-minimal
+## Social
 
-# 2. Run yarn install or npm install
-
-# 3. Navigate to the new project
-cd my-app
-
-# 4. Start server (runs on http://localhost:4000) and open GraphQL Playground
-yarn dev
-```
-
-![](https://imgur.com/hElq68i.png)
-
-## Documentation
-
-### Commands
-
-* `yarn start` or `npm run start` starts GraphQL server on `http://localhost:4000`
-* `yarn dev` or `npm run dev` starts GraphQL server on `http://localhost:4000` _and_ opens GraphQL Playground
-
-### Project structure
-
-| File name 　　　　　　　　　　　　　　| Description 　　　　　　　　<br><br>| 
-| :--  | :--         |
-| `└── src ` (_directory_) | _Contains the source files for your GraphQL server_ |
-| `　　├── index.ts` | The entry point for your GraphQL server |
-
-
-## Contributing
-
-The GraphQL boilerplates are maintained by the GraphQL community, with official support from the [Apollo](https://dev-blog.apollodata.com) & [Graphcool](https://blog.graph.cool/) teams.
-
-Your feedback is **very helpful**, please share your opinion and thoughts! If you have any questions or want to contribute yourself, join the [`#graphql-boilerplate`](https://graphcool.slack.com/messages/graphql-boilerplate) channel on our [Slack](https://graphcool.slack.com/).
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/brunoasato/)
+[![Github Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BrunoAsato)
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/asatobruno)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/brunoasato/)
+<br /><br />

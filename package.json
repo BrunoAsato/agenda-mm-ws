@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --inspect --exec babel-node src/server.js",
+    "dev": "nodemon --inspect --exec ./src/server.js",
     "start": "yarn dev",
     "server": "node dist/server.js",
     "playground": "graphql playground"
@@ -24,6 +24,7 @@
     "graphql-yoga": "1.16.2",
     "mongoose": "^6.0.12",
     "nedb": "^1.8.0",
+    "node": "^17.0.1",
     "nodemon": "^2.0.14"
   },
   "devDependencies": {

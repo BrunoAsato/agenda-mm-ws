@@ -4477,6 +4477,11 @@ no-case@^2.2.0, no-case@^2.3.2:
   dependencies:
     lower-case "^1.1.1"
 
+node-bin-setup@^1.0.0:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/node-bin-setup/-/node-bin-setup-1.0.6.tgz#4b5c9bb937ece702d7069b36ca78af4684677528"
+  integrity sha512-uPIxXNis1CRbv1DwqAxkgBk5NFV3s7cMN/Gf556jSw6jBvV7ca4F9lRL/8cALcZecRibeqU+5dFYqFFmzv5a0Q==
+
 node-environment-flags@^1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/node-environment-flags/-/node-environment-flags-1.0.6.tgz#a30ac13621f6f7d674260a54dede048c3982c088"
@@ -4519,6 +4524,13 @@ node-request-by-swagger@^1.0.6:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/node-request-by-swagger/-/node-request-by-swagger-1.1.4.tgz#909a057bd4dffdf5245cb713f5543a9c56eea94d"
   integrity sha512-hwaTaFPUwNKns5qXwGJpLQM3Z5zRluYeAxpYy1L8fWmWdT/DjLmsnW8/oGlSN8Vo4R28c2znfUoBUiB/RlPptw==
+
+node@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/node/-/node-17.0.1.tgz#d0e214e5340a4c4d44f31e89c905327049890f4b"
+  integrity sha512-8sSc6kJ0cKU769B+y0e/Z1p6MMh4+eAfIVewkJ0vTwUJKAMtdfDewj1qxfG3cXUfNpnewKm1s5P4yMV300Hcuw==
+  dependencies:
+    node-bin-setup "^1.0.0"
 
 nodemon@^2.0.14:
   version "2.0.14"
