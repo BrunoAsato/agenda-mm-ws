@@ -3,7 +3,7 @@ import { GraphQLObjectType, GraphQLID, GraphQLString } from 'graphql';
 const contatoType = new GraphQLObjectType({
   name: 'contatoType',
   fields: () => ({
-    id_contato: {
+    _id: {
       type: GraphQLID
     },
     nome: {

@@ -1,25 +1,28 @@
-import { DataTypes } from 'sequelize';
-import db from '~/utils/database';
+import db from '~/utils/db';
 
-const Contato = db.sequelize.define('contato', {
-  id_contato: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    allowNull: false
-  },
-  nome: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  telefone: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  email: {
-    type: DataTypes.STRING
-  }
-});
-
-//Contato.belongsTo(Pessoa, { foreignKey: 'id_pessoa', as: 'id_pessoa' });
+const Contato = mongoose.model(
+  'Contato',
+  new mongoose.Schema(
+    {
+      _id: {
+        type: Id,
+        required: true
+      },
+      nome: {
+        type: String,
+        required: true
+      },
+      telefone: {
+        type: String,
+        required: true
+      },
+      email: {
+        type: String,
+        required: true
+      }
+    },
+    { collection: 'contato' }
+  )
+);
 
 export default Contato;

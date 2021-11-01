@@ -1,66 +1,91 @@
-import db from '~/utils/database';
-
-const { sequelize } = db;
-const { models } = sequelize;
-
-const getContatoById = async (parent, args) => {
-  const { id_contato } = parent || args;
-  if (id_contato) {
-    const contato = await models.contato.findByPk(id_contato);
-    return contato;
-  }
-  return null;
-};
+import db from '~/utils/db';
+import crypto from 'crypto';
 
 const getAllContatos = async () => {
-  const contatos = await models.contato.findAll({
-    order: [['nome']]
+  const contatos = new Promise((resolve, reject) => {
+    db.find({}, (err, docs) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(docs);
+    });
   });
   return contatos;
 };
 
-const insertOneContato = (parent, { data }) => {
-  new Promise(resolve => {
-    db.contato.insert(data, () => {
-      db.users.find({}, (err, docs) => {
-        resolve(docs);
-      });
-    });
-  });
-};
-
-const removeContato = (parent, { data }) =>
-  new Promise(resolve => {
-    db.contato.remove({ id_contato: data.id_contato }, {}, () => {
-      db.contatos.find({}, (err, docs) => {
-        resolve(docs);
-      });
-    });
-  });
-
-const updataContato = (parent, { data }) =>
-  new Promise(resolve => {
-    db.contatos.update(
-      { id_contato: contato.id_contato },
-      {
-        name: contato.nome,
-        email: contato.email
-      },
-      {},
-      () => {
-        db.contatos.find({}, (err, docs) => {
-          resolve(docs);
-        });
+const getContatoById = async (_, { query }) => {
+  const contato = new Promise((resolve, reject) => {
+    db.findOne({ _id: query._id }, (err, docs) => {
+      if (err) {
+        reject(err);
       }
-    );
+      resolve(docs);
+    });
   });
-
-const contatoResolvers = {
-  getContatoById,
-  getAllContatos,
-  insertOneContato,
-  removeContato,
-  updataContato
+  return contato;
 };
 
-export default contatoResolvers;
+const insertContato = async (_, { data }) => {
+  let _id = crypto.randomBytes(10).toString('hex');
+  // const contato = { _id: _id, ...data };
+  // console.log('contato', contato);
+  const contato = new Promise((resolve, reject) => {
+    db.insert({ _id: _id, ...data }, (err, docs) => {
+      if (err) {
+        reject(err);
+      }
+      db.findOne({ _id: _id }, (err, docs) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(docs);
+      });
+    });
+  });
+  return contato;
+};
+
+const removeContato = async (_, { query }) => {
+  const contatos = new Promise((resolve, reject) => {
+    db.remove({ _id: query._id }, {}, (err, docs) => {
+      if (err) {
+        reject(err);
+      }
+      db.find({}, (err, docs) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(docs);
+      });
+    });
+  });
+  return contatos;
+};
+
+const updateContato = async (_, { query, data }) => {
+  const id = query._id;
+  const contato = new Promise((resolve, reject) => {
+    db.update({ _id: id }, { ...data }, {}, (err, docs) => {
+      if (err) {
+        reject(err);
+      }
+      db.findOne({ _id: id }, (err, docs) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(docs);
+      });
+    });
+  });
+  return contato;
+};
+
+const resolvers = {
+  getAllContatos,
+  getContatoById,
+  insertContato,
+  removeContato,
+  updateContato
+};
+
+export default resolvers;
